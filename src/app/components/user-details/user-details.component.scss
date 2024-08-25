@@ -1,0 +1,28 @@
+.user {
+
+  &__title {
+    background-color: #f7f7f7;
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+
+  &__content {
+
+    &--item {
+      .item__key {
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+
+      .item__value {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

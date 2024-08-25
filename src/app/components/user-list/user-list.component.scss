@@ -1,0 +1,69 @@
+.users {
+  font-family: Inter, sans-serif;
+
+  &__title {
+    background-color: #f7f7f7;
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+
+  &__table {
+    overflow-x: auto;
+  }
+
+  textarea {
+    height: 20vh;
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+
+    thead {
+      tr {
+        background-color: #F7F9FD;
+
+        th {
+          padding: 0.5rem;
+          font-size: 0.9rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          color: #888888;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+
+        &:nth-child(even) {
+          background-color: #F7F9FD;
+        }
+
+        &:hover {
+          background-color: #F1F8F5;
+        }
+
+        td {
+          padding: 0.5rem;
+        }
+      }
+      .editable-row {
+        background-color: #f0f8ff;
+        border: 1px solid gray;
+        border-left: 4px solid #007bff;
+        transition: background-color 0.3s ease;
+
+        td {
+          font-weight: bold;
+          color: #333;
+        }
+      }
+    }
+  }
+}
