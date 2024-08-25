@@ -1,0 +1,43 @@
+<section id="users">
+  <div class="users p-5">
+    <div class="users__title p-2 mb-3">
+      <h3>Users List</h3>
+    </div>
+    <div class="users__table">
+      <table>
+        <thead>
+        <tr>
+          <th *ngFor="let header of headers" [ngStyle]="{ 'width': calculateWidth()+'vw' }">{{ header }}</th>
+          <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of userList | paginate: { itemsPerPage: 10, currentPage}; let i = index"
+            [ngClass]="{ 'editable-row': user.isEditable }">
+          @if (user.isEditable) {
+            <td *ngFor="let key of headers">
+              @if (user[key].length > 50) {
+                <textarea [(ngModel)]="user[key]"></textarea>
+              } @else {
+                <input type="text" [(ngModel)]="user[key]">
+              }
+            </td>
+            <td>
+              <span class="mx-1" (click)="updateUser(getGlobalIndex(i), user)"><i class="fa-solid fa-check"></i></span>
+              <span class="mx-1" (click)="cancelEdit()"><i class="fa-solid fa-xmark"></i></span>
+            </td>
+          } @else {
+            <td *ngFor="let key of headers" routerLink="/user/{{getGlobalIndex(i)}}"
+                class="w-auto">{{ user[key] | truncate: 80 }}
+            </td>
+            <td (click)="toggleEditMode(getGlobalIndex(i))"><i class="fa-solid fa-pen"></i></td>
+          }
+        </tr>
+        </tbody>
+      </table>
+      <div class="pagination float-end m-4">
+        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</section>

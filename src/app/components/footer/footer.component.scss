@@ -1,0 +1,69 @@
+.footer {
+  padding-left: 5rem;
+  padding-right: 5rem;
+
+  p {
+    font-size: .9rem;
+  }
+
+  .logo h1 {
+    font-size: 4rem;
+    font-weight: 600;
+  }
+
+  &__main {
+    display: flex;
+    padding-bottom: 5rem;
+
+    &-brand {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .desc p {
+        width: 40%;
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    &-links {
+      flex: 1;
+
+      .about, .shop, .contact {
+        flex: 1;
+
+        a {
+          display: block;
+
+          &:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__sub {
+    display: flex;
+    padding-bottom: 4rem;
+    justify-content: space-between;
+
+    .socials {
+      display: flex;
+      gap: 1.5rem;
+
+      [class^="fa-"] {
+        font-size: 1.2rem;
+      }
+    }
+
+    .privacy {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    p {
+      text-transform: uppercase;
+    }
+  }
+}
